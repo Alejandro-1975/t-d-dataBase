@@ -1,0 +1,78 @@
+db.products.insertOne({
+    "title": "Celular Samsung - Oferta!!!",
+    "description": "Celular Samsung modelo 2021 8k conexion 5G NFC tarjeta de memoria",
+    "price": 1233456.99,
+    "stock": 23,
+    "sold_count": 45,
+    "model": "ABC123",
+    "brand": "Samsung",
+    "seller_id": 1234,
+    "views_count": 0,
+    "likes_count": 0,
+    
+    
+})
+
+db.products.insertOne({
+    "title": "Televisor LG!!!",
+    "description": "Televisor LG modelo 2021 8k conexion 5G NFC tarjeta de memoria",
+    "price": 54500.99,
+    "stock": 2,
+    "sold_count": 34,
+    "model": "ABC123",
+    "brand": "LG",
+    "seller_id": 1234,
+    "views_count": 10,
+    "likes_count": 0,
+    
+    
+})
+
+http://localhost:4000/products?
+    price_min=10000&
+    most_visited=true&
+    in_stock=false
+
+db.products.find({ 
+    brand : "Samsung",
+    "$and" : [
+        {
+            price : {
+                     "$gte" : 10000     
+                    }
+        },
+        {
+            price : {
+                    "$lte" : 2000000     
+                    }
+        },
+    ],
+   
+    })
+
+   OPERADORES DE BUSQUEDA Y COMPARACION
+   <  $lt  Less than
+   >  $gt  greater than >
+   <= $lte less than equal
+   >= $gte greater than Equal 
+   == $eq  equal
+   != $ne  no equal 
+
+TRADUCCION PARA PASARLO A LAS ROUTES 
+
+db.products.find({ 
+    brand : req.query.brand,
+    "$and" : [
+        {
+            price : {
+                     "$gte" : req.query.price_min     
+                    }
+        },
+        {
+            price : {
+                    "$lte" : req.query.price_max   
+                    }
+        },
+    ],
+   
+    })

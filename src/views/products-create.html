@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Alta de Producto</H1>
+
+   <form action="/products" method="post" novalidate autocomplete="off"> 
+        <div>
+            <div>
+                <label for="product-title">Nombre del Producto</label>
+                <input id="product-title" type="text" name="name" min="0"/>
+            </div>
+            <div>
+                <label for="product-title">Precio</label>
+                <input id="product-title" type="number" name="price" min="0"/>
+            </div>
+            <div>
+                <label for="product-title">Descripción del producto</label>
+                <textarea id="product-title" name="description"></textarea>
+            </div>
+            <div>
+                <label for="product-title">Categoria</label>
+                <select name="category">
+                    <option value="1">Indumentaria</option>
+                    <option value="245">Descartables y Bioseguridad</option>
+                
+                </select>
+            </div>
+            <div>
+                <label for="product-title">Marca</label>
+                <select name="brand">
+                    <option value="345">Crosstex</option>
+                    <option value="245">3M</option>
+                </select>
+            </div>
+            <div>
+                <label for="product-title">Modelo</label>
+                <input id="product-title" type="text" name="model"/>
+            </div>
+            <div>
+                <label for="product-title">Stock</label>
+                <input type="number" name="stock" min="0"/>
+            </div>
+    
+        </div>
+        
+        <div>
+            <button>Enviar</button>
+        </div>
+
+   </form>
+</body> 
+</html>
